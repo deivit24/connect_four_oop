@@ -1,0 +1,250 @@
+body {
+  background-color: #240b36 !important;
+}
+
+/* full background of particle js */
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+/* Instructions onclick it will open a menu */
+
+.nav-button {
+  border: 0;
+  background: transparent;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  outline: none;
+  font-family: 'Candal', sans-serif;
+}
+.nav-button:hover {
+  border: 0;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #240b36;
+  outline: none;
+  font-family: 'Candal', sans-serif;
+}
+.nav-open {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  font-size: 20px !important;
+  margin-bottom: 20px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateX(-150%);
+  transition: transform 0.3s ease-in-out 0.4s;
+}
+.nav.visible {
+  transform: translateX(0);
+  z-index: 500;
+}
+
+.nav-black {
+  background-color: rgb(34, 31, 31);
+  width: 60%;
+  max-width: 480px;
+  min-width: 320px;
+}
+
+.nav-black.visible {
+  transition-delay: 0s;
+  z-index: 500;
+}
+
+.nav-red {
+  background-color: rgb(229, 9, 20);
+  transition-delay: 0.2s;
+  width: 95%;
+}
+
+.nav-red.visible {
+  transition-delay: 0.2s;
+  z-index: 500;
+}
+
+.nav-white {
+  background-color: #fff;
+  padding: 40px;
+  transition-delay: 0s;
+  width: 95%;
+}
+
+.nav-white.visible {
+  transition-delay: 0.4s;
+}
+
+.nav-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  font-family: 'Candal', sans-serif;
+}
+.nav-text {
+  color: black;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+.nav-container h4 {
+  font-size: 1.5rem;
+  padding: 0px 10px;
+  color: #240b36;
+}
+.nav-close {
+  color: black !important;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+.nav-close:hover {
+  color: #f12711 !important;
+}
+
+/* Container */
+
+.container {
+  padding-top: 25px;
+  font-family: 'Candal', sans-serif;
+  transition: all ease-in-out 1s;
+}
+#player-input {
+  transition: all ease-in-out 1s;
+}
+.invisible {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+#container {
+  font-family: 'Candal', sans-serif !important;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#container .info-row {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin: 20px 0px;
+  background: linear-gradient(#f12711, #f5af19);
+  width: 500px;
+}
+h1 {
+  color: white;
+  font-size: 4rem !important;
+}
+
+#restart-game {
+  cursor: pointer;
+}
+#restart-game:hover {
+  color: #240b36;
+}
+
+/* game board table */
+
+#game {
+  padding: 20px;
+  background: linear-gradient(#f12711, #240b36);
+  border-radius: 25px;
+}
+#column-top {
+  background: transparent;
+  border-radius: 25px dashed #240b36 !important;
+}
+#board td {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  background: transparent;
+}
+
+/* This is the circle in the middle of td to make it look like the real game */
+.circle {
+  background-color: #fff;
+  display: block;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  margin: auto;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  /* TODO: make into circles */
+  position: absolute;
+  top: 0;
+  animation-name: fall;
+  animation-duration: 1s;
+  border-radius: 50%;
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+}
+
+@keyframes fall {
+  0% {
+    top: -350px;
+  }
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.piece.p1 {
+  background-color: red;
+}
+
+.piece.p2 {
+  background-color: blue;
+}
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  background-color: transparent;
+  margin: 4px !important;
+  border: 2px dashed #f5af19;
+  border-radius: 25px;
+}
+
+#column-top td:hover {
+  cursor: grab;
+  background-color: gold !important;
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  #container .info-row h5 {
+    font-size: 1rem !important;
+  }
+  #container .info-row {
+    width: 280px !important;
+  }
+  #board td {
+    width: 30px;
+    height: 30px;
+
+    position: relative;
+    background: transparent;
+  }
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8" />
+   <meta
+     name="viewport"
+     content="width=device-width, initial-scale=1, shrink-to-fit=no"
+   />
+
+   <!-- Font Awesome -->
+   <script
+     src="https://kit.fontawesome.com/21dd8fd46c.js"
+     crossorigin="anonymous"
+   ></script>
+   <!-- Google Fonts -->
+   <link
+     href="https://fonts.googleapis.com/css?family=Candal&display=swap"
+     rel="stylesheet"
+   />
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="styles.css" />
+
+   <!-- Bootstrap CSS -->
+   <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+     crossorigin="anonymous"
+   />
+
+   <title>Connect Four</title>
+</head>
+<body>
+    <!-- Background of particles js -->
+    <div id="particles-js"></div>
+<!-- Instructions menu button -->
+<button id="open" class="nav-button nav-open ">
+  Instructions
+</button>
+<!-- Description of the game -->
+<div class="nav nav-black">
+  <div class="nav nav-red">
+    <div class="nav nav-white">
+      <div class="nav-container">
+        <button id="close" class="nav-button nav-close">
+          <i class="fas fa-times"></i>
+        </button>
+        <h4>Description</h4>
+        <p class="nav-text">
+          This game is played on a vertical board wich has seven hollow
+          columns and six rows. Each column has a hole in the upper part of
+          the board, where pieces are introduced. There is a window for
+          every square, so that pieces can be seen from both sides.
+          <br />
+          In short, it´s a vertical board with 42 windows distributed in 6
+          rows and 7 columns.
+          <br />
+          Both players have a set of 21 thin pieces (like coins); each of
+          them uses a different colour. The board is empty at the start of
+          the game.
+        </p>
+        <h4>Objective</h4>
+        <p class="nav-text">
+          The aim for both players is to make a straight line of four own
+          pieces; the line can be vertical, horizontal or diagonal.
+        </p>
+        <h4>How the game goes on</h4>
+        <p class="nav-text">
+          Before starting, players decide randomly which of them will be the
+          beginner; moves are made alternatively, one by turn.
+          <br />
+          Moves entails in placing new pieces on the board; pieces slide
+          downwards from upper holes, falling down to the last row or piling
+          up on the last piece introduced in the same column. So, in every
+          turn the introduced piece may be placed at most on seven different
+          squares.
+          <br />
+          The winner is the first player who gets a straight line made with
+          four own pieces and no gaps between them.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="container" class="container">
+   <h1>Connect Four</h1>
+   <br>
+      <div id="player-input" class="input-group">
+       
+        <input type="text"  class="form-control" id="p1-color" placeholder="Enter Player 1's color">
+        <input type="text"  class="form-control" id="p2-color" placeholder="Enter Player 2's color">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-primary" type="button" id="start-btn">Start Game</button>
+        </div>
+      </div>
+     <br>
+    
+    <div id="error-message">
+    </div>
+     <!-- information row with players turn and restart button -->
+     <div class="row info-row">
+      <div class="col-8" style="text-align: left;">
+        <h5>Player <span id="nextPlayer"></span> turn</h5>
+      </div>
+      <div class="col-4">
+        <h5 id="restart-game" onclick="restart()">
+          <i class="fas fa-redo"></i> Restart
+        </h5>
+      </div>
+    </div>
+    <div id="alert"></div>
+<div id="game">
+  <table id="board">
+
+  </table>
+</div>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"
+></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="particles.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
